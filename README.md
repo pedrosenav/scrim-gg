@@ -1,2 +1,2 @@
-# valorant-scrim-maker
+# Valoratn Scrim Maker
  A Valorant team randomizer to make your scrims more interesting!

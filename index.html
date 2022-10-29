@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrim Maker - Valorant</title>
+    <link rel="shortcut icon" href="Assets/icons/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section id="teste-mapas">
+            <div id="mapa">
+                <h3>?</h3>
+            </div>
+            <input type="button" value="SORTEAR">
+        </section>
+
+        <section id="teste-agentes"></section>
+
+        <section id="principal">
+            <div id="container-jogadores">
+                <div id="add-player">
+    
+                    <div id="titulo-add" class="underscore">
+                        <h2>JOGADORES</h2>
+                    </div><!-- titulo-add -->
+                    <div id="jogadores-add">
+                        <textarea name="players-add" autofocus id="players-add" cols="30" rows="10" placeholder="Separe cada jogador por vírgula ou quebra de linha!"></textarea>
+                    </div><!-- jogadores-add -->
+                    <div id="button-add">
+                        <input type="button" value="ADICIONAR">
+                    </div><!-- button-add -->
+                </div><!-- add-player -->
+
+
+                <div id="player-list">
+                    <div id="jogadores-adicionados">
+                        <div id="grupo-jogadores">
+                        </div><!-- grupo-jogadores-nomes -->
+                    </div><!--jogadores-adicionados-->
+                    
+                    <div id="button-gerar-container">
+                        <button id="button-gerar">
+                            <p>GERAR SCRIM</p>
+                            <div>
+                                <span id="minimo-jogadores">
+                                    <!-- ALERTA -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 9v2m0 4v.01" />
+                                    <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                                    </svg>
+                                    Mínimo de 2 jogadores
+                                </span>
+                            </div>
+                        </button>
+                        <!-- LIXEIRA -->
+                        <svg id="limpar" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 7h16"></path>
+                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                            <path d="M10 12l4 4m0 -4l-4 4"></path>
+                        </svg>
+                    </div>
+                </div><!-- player-list -->
+            </div><!-- container-jogadores -->
+        </section><!-- principal -->
+
+        <section id="fazemos" > 
+            <div id="container-fazemos">
+                <div id="titulo-fazemos" class="underscore">
+                    <h2>O que sorteamos ?</h2>
+                </div><!-- titulo-fazemos -->
+
+                <div id="cards-container">
+                    <div class="card times">
+                        <div class="card-titulo underscore">
+                            <h3>TIMES</h3>
+                        </div><!-- titulo-times -->
+                    </div><!-- times -->
+                    <div class="card agentes">
+                        <div class="card-titulo underscore">
+                            <h3>AGENTES</h3>
+                        </div><!-- titulo-agentes -->
+                    </div><!-- agentes -->
+                    <div class="card mapas">
+                        <div class="card-titulo underscore">
+                            <h3>MAPAS</h3>
+                        </div><!-- titulo-mapas -->
+                    </div><!-- maps -->
+                </div><!-- cards -->
+
+            </div><!-- container-fazemos -->
+        </section><!-- fazemos -->
+    </main>
+</body>
+</html>

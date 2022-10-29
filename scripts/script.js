@@ -57,12 +57,12 @@ window.addEventListener('load', loadAgents)
  * [] - Transição do nome do mapa
  */
 
-/* 
 function shuffleMaps() {
+    console.log('foi')
     let nome = getRandomItem(MAPS)
     const mapa = document.querySelector('#mapa')
     const nomeMapa = document.querySelector('#mapa h3')
-    const bgImage = `linear-gradient(231.45deg, rgba(0, 0, 0, 0) 27.82%, rgba(83, 33, 43, 0.7) 78.81%), url(../Assets/images/maps/${nome}.png)`;
+    const bgImage = `linear-gradient(231.45deg, rgba(0, 0, 0, 0) 27.82%, rgba(83, 33, 43, 0.7) 78.81%), url(./Assets/images/maps/${nome}.png)`;
 
     nomeMapa.textContent = nome.toUpperCase()
     
@@ -73,7 +73,7 @@ function shuffleMaps() {
 
 const sortearMapa = document.querySelector('input[value=SORTEAR]')
 sortearMapa.addEventListener('click', shuffleMaps)
- */
+
 
 // FUNÇÕES
 

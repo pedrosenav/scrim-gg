@@ -56,13 +56,13 @@ window.addEventListener('load', loadAgents)
 /* [] - Transição da imagem do mapa
  * [] - Transição do nome do mapa
  */
-
+/* 
 function shuffleMaps() {
     console.log('foi')
     let nome = getRandomItem(MAPS)
     const mapa = document.querySelector('#mapa')
     const nomeMapa = document.querySelector('#mapa h3')
-    const bgImage = `linear-gradient(231.45deg, rgba(0, 0, 0, 0) 27.82%, rgba(83, 33, 43, 0.7) 78.81%), url(./Assets/images/maps/${nome}.png)`;
+    const bgImage = `linear-gradient(231.45deg, rgba(0, 0, 0, 0) 27.82%, rgba(83, 33, 43, 0.7) 78.81%), url(./Assets/images/maps/${nome}.png)`
 
     nomeMapa.textContent = nome.toUpperCase()
     
@@ -73,9 +73,9 @@ function shuffleMaps() {
 
 const sortearMapa = document.querySelector('input[value=SORTEAR]')
 sortearMapa.addEventListener('click', shuffleMaps)
+ */
 
-
-// FUNÇÕES
+// FUNÇÕES+
 
 function getRandomItem(array) {
     // retorna um item aleatório de um array
@@ -95,22 +95,23 @@ function insertPlayer(playerArray = []) {
         if (!!isPresent(name)) {
             // verifica se o jogador está presente
             console.log('Jogador já presente!')
-
-        } else {
-            // insere o jogador no array
-            PLAYERS.push(name)
-
-            // adiciona os players na tela
-            const player = document.createElement('p')
-            const addedPlayersGroup = document.querySelector('#grupo-jogadores')
-
-            // cria um p e usa o nome do jogador (para cada jogador)
-            player.textContent = name
-
-            // coloca-o no grupo e adiciona a ele a opção de remove-lo
-            addedPlayersGroup.appendChild(player)
-            player.addEventListener('click', removePlayer)
+            return
         }
+
+        // insere o jogador no array
+        PLAYERS.push(name)
+
+        // adiciona os players na tela
+        const player = document.createElement('p')
+        const addedPlayersGroup = document.querySelector('#grupo-jogadores')
+
+        // cria um p e usa o nome do jogador (para cada jogador)
+        player.textContent = name
+
+        // coloca-o no grupo
+        addedPlayersGroup.appendChild(player)
+        // adiciona a ele a opção de remove-lo
+        player.addEventListener('click', removePlayer)
     })
 }
 
@@ -127,7 +128,9 @@ function clearPlayers() {
 
     // adicionar animação na lixeira
     const clearButton = document.querySelector('#limpar')
+    
     clearButton.classList.add('shake-animation')
+    
     setTimeout(() => {
         clearButton.classList.remove('shake-animation')
     }, 800)
@@ -146,7 +149,7 @@ function removePlayer(player) {
 
 function isPresent(player) {
     // verifica se o player já está presente no array
-    if (PLAYERS.includes(player) === true) {
+    if (!!(PLAYERS.includes(player))) {
         return true // está presente
     } else {
         return false // não está presente
@@ -188,11 +191,11 @@ function shuffleTeams(ogPlayerArray = []) {
     while (currentIndex != 0) {
   
       // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex--
   
       // And swap it with the current element.
-      [randomTeam[currentIndex], randomTeam[randomIndex]] = [randomTeam[randomIndex], randomTeam[currentIndex]];
+      [randomTeam[currentIndex], randomTeam[randomIndex]] = [randomTeam[randomIndex], randomTeam[currentIndex]]
     }
     
     // copia da metade para final
@@ -207,11 +210,14 @@ function shuffleTeams(ogPlayerArray = []) {
 // FUNÇÃO FINAL
 
 function generateTeams() {
-    if (isSufficient()) {
-        // função de sortear times
-        console.log('gerando times')
-        console.log(shuffleTeams(PLAYERS));
+    if (!isSufficient()) {
+        console.log('Jogadores insuficientes!')
+        return
     }
+    
+    // função de sortear times
+    console.log('gerando times')
+    console.log(shuffleTeams(PLAYERS))
 }
 
 function addPlayer() {
